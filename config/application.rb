@@ -23,4 +23,4 @@ module Base
 end
 
 APP_NUMBER = '04'.freeze
-APP_NAME = 'Conditional Cancel'.freeze
+APP_NAME = 'Conditional redirects'.freeze
