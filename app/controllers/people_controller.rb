@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+  helper_method :form_redirect_url
+
   def index
     @people = Person.all.sorted
   end
@@ -18,6 +20,7 @@ class PeopleController < ApplicationController
 
   def edit
     @person = Person.find(params[:id])
+    session[:start_point] = request.env['HTTP_REFERER']
   end
 
   def update
@@ -39,6 +42,10 @@ class PeopleController < ApplicationController
   end
 
   def save_person(action)
-    redirect_to @person, notice: "#{@person.name} has been #{action}" if @person.save
+    redirect_to form_redirect_url, notice: "#{@person.name} has been #{action}" if @person.save
+  end
+
+  def form_redirect_url
+    session[:start_point] || @person
   end
 end

@@ -40,4 +40,31 @@ class PeopleIntegrationTest < ActionDispatch::IntegrationTest
     assert page.has_content? new_bio
     assert page.has_content? "#{new_name} has been updated"
   end
+
+  test 'cancel and save redirect to start point' do
+    check_redirect 'Cancel'
+    check_redirect 'Save'
+  end
+
+  private
+
+  def check_redirect(action)
+    check_person action
+    check_people action
+  end
+
+  def check_person(action)
+    visit '/people'
+    first('li').click_on('view')
+    click_on 'Edit'
+    click_on action
+    assert find('//h1').text == 'David Jones'
+  end
+
+  def check_people(action)
+    visit '/people'
+    first('li').click_on('edit')
+    click_on action
+    assert find('//h1').text == 'People'
+  end
 end
