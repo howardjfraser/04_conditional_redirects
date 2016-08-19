@@ -1,9 +1,5 @@
-<li class="p-r-1 p-b-q">
-  <span class="nowrap">
-    <span class="name">
-      <%= person.name %>
-    </span>
-    <%= link_to "view", person %>
-    <%= link_to "edit", edit_person_path(person) %>
-  </span>
+<li class="p-r-1 p-b-q nowrap d-inline-block">
+  <%= link_to "#{person.name}", person, class: 'name' %>
+  <%= link_to "view", person %>
+  <%= link_to "edit", edit_person_path(person) %>
 </li>
