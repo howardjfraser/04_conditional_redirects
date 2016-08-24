@@ -7,3 +7,8 @@ michael:
   name: Michael Phillip
   job_title: <%= FFaker::Job.title %>
   bio: <%= FFaker::Lorem.paragraph %>
+
+avi:
+  name: Avie Smith
+  job_title: <%= FFaker::Job.title %>
+  bio: <%= FFaker::Lorem.paragraph %>

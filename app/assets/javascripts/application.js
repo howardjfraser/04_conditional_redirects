@@ -23,11 +23,4 @@ document.addEventListener("turbolinks:load", function() {
     // TODO: use CSS animation?
     $(this).remove();
   });
-
-  // people filter
-  var options = {
-    valueNames: [ 'name' ]
-  };
-  var userList = new List('people', options);
-
 })
