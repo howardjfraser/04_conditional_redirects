@@ -58,7 +58,7 @@ class PeopleIntegrationTest < ActionDispatch::IntegrationTest
     first('li').click_on('view')
     click_on 'Edit'
     click_on action
-    assert find('//h1').text == 'David Jones'
+    assert find('//h1').text == 'Avie Smith'
   end
 
   def check_people(action)
