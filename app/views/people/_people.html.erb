@@ -1,0 +1,9 @@
+<div id="people">
+  <ul class="list list-unstyled">
+    <%= render @people %>
+  </ul>
+
+  <div class="text-muted m-t-2">
+    <%= pluralize @people.count, 'person' %>
+  </div>
+</div>
