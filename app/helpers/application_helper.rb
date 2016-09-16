@@ -1,6 +1,6 @@
 module ApplicationHelper
   def app_number
-    "Derailed #{APP_NUMBER}"
+    APP_NUMBER
   end
 
   def app_name
