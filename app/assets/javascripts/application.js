@@ -17,10 +17,14 @@
 
 document.addEventListener("turbolinks:load", function() {
 
-  // dismiss flash
+  // click flash to dismiss
   $('body').on('click', '.flash', function(e) {
     e.preventDefault();
-    // TODO: use CSS animation?
     $(this).remove();
   });
+
+  // delete flash
+  setTimeout(function(){
+    $('.flash').remove();
+  }, 6000);
 })
